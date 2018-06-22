@@ -28,10 +28,17 @@ abstract class Variable {
 
 		if (array_key_exists($name, Static::$assigns)) {
 
+			$value = getenv($name);
+
 			$item = new Variable\Item;
+			
 			$item->setName($name);
+
 			$item->setDescription(Static::$assigns[$name]);
-			$item->setValue((string) getenv($name));
+
+			if ($value) {
+				$item->setValue($value);
+			};
 
 			return $item;
 
