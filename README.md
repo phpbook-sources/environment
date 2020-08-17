@@ -22,6 +22,8 @@
  * 
  * ******************************************/
 
+/* Prefix environments variables. Default with no Prefix  */
+\PHPBook\Environment\Variable::prefix('MY-APP-');
 
 /* Assign a environment variable with description */
 \PHPBook\Environment\Variable::assign('APP-NAME', 'Application Name');

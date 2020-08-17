@@ -3,10 +3,18 @@
 abstract class Variable {
 
 	private static $assigns = [];
+
+	private static $prefix = '';
     
     public static function assign(String $name, $value) {
 
 		Static::$assigns[$name] = $value;
+		
+	}
+
+	public static function prefix(String $prefix) {
+
+		Static::$prefix = $prefix;
 		
 	}
 
@@ -28,7 +36,7 @@ abstract class Variable {
 
 		if (array_key_exists($name, Static::$assigns)) {
 
-			$value = getenv($name);
+			$value = getenv(Static::$prefix . $name);
 
 			$item = new Variable\Item;
 			
