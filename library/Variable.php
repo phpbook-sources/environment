@@ -12,7 +12,12 @@ abstract class Variable {
 		
 	}
 
-	public static function prefix(String $prefix) {
+	public static function prefix(?String $prefix = null) {
+
+		if ($prefix === null) {
+
+			return Static::$prefix; 
+		}
 
 		Static::$prefix = $prefix;
 		

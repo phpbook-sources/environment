@@ -22,8 +22,14 @@
  * 
  * ******************************************/
 
-/* Prefix environments variables. Default with no Prefix  */
+/* Prefix environments variables. Default with no Prefix ('') */
 \PHPBook\Environment\Variable::prefix('MY-APP-');
+
+/* Get the prefix of environments variables. In this case returns 'MY-APP-' */
+$prefix = \PHPBook\Environment\Variable::prefix(); 
+
+/* Clear the prefix of environments variables. */
+\PHPBook\Environment\Variable::prefix('');
 
 /* Assign a environment variable with description */
 \PHPBook\Environment\Variable::assign('APP-NAME', 'Application Name');
@@ -54,4 +60,4 @@ foreach($variables as $variable) {
 ?>
 ```
 
-- Remember when you change the environment variable, you must restart your cgi webserver.
+- Remember when you change the environment variable, you must restart your webserver or shell.
